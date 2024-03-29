@@ -16,7 +16,6 @@ class Mypage extends StatelessWidget {
                   Navigator.pushNamed(context, "/login");
                 },
                 child: const Text("Mypage"))),
-        bottomNavigationBar: const BottomBar(),
       ),
     );
   }

@@ -16,7 +16,6 @@ class HomeScreen extends StatelessWidget {
                   Navigator.pushNamed(context, "/login");
                 },
                 child: const Text("Back"))),
-        bottomNavigationBar: const BottomBar(),
       ),
     );
   }

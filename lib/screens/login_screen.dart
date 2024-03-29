@@ -29,7 +29,7 @@ class _LoginFormState extends State<LoginForm> {
     try {
       var response = await request.send();
       if (response.statusCode == 200) {
-        Navigator.pushNamed(context, "/home");
+        Navigator.pushNamed(context, "/bab");
       } else {
         print("실패 ${response.statusCode}");
       }
@@ -47,10 +47,11 @@ class _LoginFormState extends State<LoginForm> {
           Form(
             key: formKey,
             child: Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 children: [
-                  Image.asset("image/nubida_logo.png", width: 400, height: 400),
+                  Image.asset("image/nubida_logo.png", width: 250, height: 250),
+                  const SizedBox(height: 50),
                   CustomTextFormField(
                     controller: email,
                     type: "Email",
