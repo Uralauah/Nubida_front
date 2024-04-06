@@ -1,16 +1,15 @@
-# nubida_front
+## 오픈소스SW 프로젝트 '누비다' Front
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+|타입이름|내용|
+|---|---|
+feat|	새로운 기능에 대한 커밋
+fix|	버그 수정에 대한 커밋
+build|	빌드 관련 파일 수정 / 모듈 설치 또는 삭제에 대한 커밋
+chore|	그 외 자잘한 수정에 대한 커밋
+ci|	ci 관련 설정 수정에 대한 커밋
+docs|	문서 수정에 대한 커밋
+style|	코드 스타일 혹은 포맷 등에 관한 커밋
+refactor|	코드 리팩토링에 대한 커밋
+test|	테스트 코드 수정에 대한 커밋
+perf|	성능 개선에 대한 커밋
