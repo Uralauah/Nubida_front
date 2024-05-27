@@ -15,25 +15,34 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
-      child: TextFormField(
-        controller: controller,
-        validator: validator,
-        obscureText: type == "Password" ? true : false,
-        decoration: InputDecoration(
-          hintText: "Enter $type",
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            type,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+          TextFormField(
+            controller: controller,
+            validator: validator,
+            obscureText: type.contains("비밀번호") ? true : false,
+            decoration: InputDecoration(
+              hintText: "$type 입력",
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
           ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
+        ],
       ),
     );
   }

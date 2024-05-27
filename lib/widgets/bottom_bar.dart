@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nubida_front/screens/home_screen.dart';
-import 'package:nubida_front/screens/login_screen.dart';
 import 'package:nubida_front/screens/mypage_screen.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -12,6 +12,44 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int selectedIndex = 0;
+  String role = '';
+
+  Future<String> getUserRole() async {
+    const storage = FlutterSecureStorage();
+    String? role = await storage.read(key: 'role');
+
+    if (role != null) {
+      return role;
+    } else {
+      return '';
+    }
+  }
+
+  Future<void> initUser() async {
+    String curUser = await getUserRole();
+    setState(() {
+      role = curUser;
+    });
+  }
+
+  Future<void> setPage() async {
+    const storage = FlutterSecureStorage();
+    String? page = await storage.read(key: 'page');
+    if (page != null) {
+      setState(() {
+        selectedIndex = int.parse(page);
+      });
+    } else {
+      return;
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initUser();
+    setPage();
+  }
 
   final List<Widget> pages = [
     const HomeScreen(),
@@ -29,14 +67,14 @@ class _BottomBarState extends State<BottomBar> {
     return Scaffold(
       body: pages.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
+        items: <BottomNavigationBarItem>[
+          const BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             label: '홈',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline_rounded),
-            label: '마이페이지',
+            icon: const Icon(Icons.person_outline_rounded),
+            label: (role == 'ROLE_ADMIN') ? '관리자페이지' : '마이페이지',
           ),
         ],
         currentIndex: selectedIndex,
