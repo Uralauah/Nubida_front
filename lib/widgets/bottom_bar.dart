@@ -67,14 +67,14 @@ class _BottomBarState extends State<BottomBar> {
     return Scaffold(
       body: pages.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          const BottomNavigationBarItem(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             label: '홈',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.person_outline_rounded),
-            label: (role == 'ROLE_ADMIN') ? '관리자페이지' : '마이페이지',
+            icon: Icon(Icons.person_outline_rounded),
+            label: '마이페이지',
           ),
         ],
         currentIndex: selectedIndex,
