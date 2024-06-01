@@ -32,32 +32,7 @@ class _CountryState extends State<Country> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return GestureDetector(
-      onTap: () {
-        // Navigator.of(context).pushReplacement(
-        //   MaterialPageRoute(
-        //     builder: (context) => TravelDetail(
-        //       name: widget.name,
-        //       id: widget.id,
-        //       leader: widget.leader,
-        //       budgetWon: widget.budgetWon,
-        //       startdate: widget.startdate,
-        //       returndate: widget.returndate,
-        //       countryName: countryName,
-        //       moneyTerm: widget.moneyTerm,
-        //       remainBudget: widget.remainBudget,
-        //     ),
-        //     settings: RouteSettings(
-        //       arguments: {
-        //         'name': widget.name,
-        //         'budgetWon': widget.budgetWon,
-        //         'id': widget.id,
-        //         'countryName': countryName,
-        //         'moneyTerm': widget.moneyTerm,
-        //       },
-        //     ),
-        //   ),
-        // );
-      },
+      onTap: () {},
       child: Container(
           width: screenWidth * 0.8,
           height: 200,

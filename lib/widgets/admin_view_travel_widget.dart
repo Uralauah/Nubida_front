@@ -84,7 +84,7 @@ class _AdminTravelState extends State<AdminTravel> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 200,
+                width: screenWidth * 0.4,
                 child: Padding(
                   padding: const EdgeInsets.all(17.0),
                   child: Column(

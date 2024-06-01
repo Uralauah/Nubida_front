@@ -252,11 +252,13 @@ class _TravelState extends State<Travel> {
                                                 ),
                                               ),
                                             ],
-                                            content: SizedBox(
-                                              width: screenWidth * 0.8,
-                                              height: 300,
-                                              child: ViewReview(
-                                                id: widget.id,
+                                            content: SingleChildScrollView(
+                                              child: SizedBox(
+                                                width: screenWidth * 0.8,
+                                                height: 300,
+                                                child: ViewReview(
+                                                  id: widget.id,
+                                                ),
                                               ),
                                             ),
                                           );
@@ -315,14 +317,16 @@ class _TravelState extends State<Travel> {
                                                 ),
                                               ),
                                             ],
-                                            content: SizedBox(
-                                              width: screenWidth * 0.8,
-                                              height: 450,
-                                              child: AddReview(
-                                                id: widget.id,
-                                                subject: "",
-                                                content: "",
-                                                rate: 3,
+                                            content: SingleChildScrollView(
+                                              child: SizedBox(
+                                                width: screenWidth * 0.8,
+                                                height: 450,
+                                                child: AddReview(
+                                                  id: widget.id,
+                                                  subject: "",
+                                                  content: "",
+                                                  rate: 3,
+                                                ),
                                               ),
                                             ),
                                           );

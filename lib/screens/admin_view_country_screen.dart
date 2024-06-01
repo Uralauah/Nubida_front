@@ -5,6 +5,7 @@ import 'package:nubida_front/models/country_model.dart';
 import 'package:nubida_front/services/service.dart';
 import 'package:nubida_front/widgets/add_country.dart';
 import 'package:nubida_front/widgets/admin_view_country_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class AdminViewCountry extends StatefulWidget {
   const AdminViewCountry({super.key});
@@ -86,8 +87,10 @@ class _AdminViewCountryState extends State<AdminViewCountry> {
                                 refresh();
                               }
                             },
-                            child: const Text(
+                            child: const AutoSizeText(
                               "국가 추가",
+                              maxLines: 1,
+                              minFontSize: 10,
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
