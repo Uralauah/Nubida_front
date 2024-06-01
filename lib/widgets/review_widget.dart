@@ -151,8 +151,8 @@ class _ReviewState extends State<Review> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
-                      showDialog(
+                    onPressed: () async {
+                      var result = await showDialog(
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
@@ -233,6 +233,9 @@ class _ReviewState extends State<Review> {
                           );
                         },
                       );
+                      if (result == 'deleted') {
+                        Navigator.of(context).pushReplacementNamed('/bab');
+                      }
                     },
                     child: const Text(
                       "삭제",
