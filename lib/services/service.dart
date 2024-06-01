@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/models/country_model.dart';
 import 'package:nubida_front/models/plan_model.dart';
 import 'package:nubida_front/models/recommend_country_model.dart';
@@ -10,7 +11,7 @@ import 'package:http/http.dart' as http;
 import 'package:nubida_front/models/traveler_model.dart';
 
 class Service {
-  static const String baseUrl = "http://localhost:8080";
+  static String baseUrl = serverUrl;
 
   Future<String> getCurrentUserToken() async {
     const storage = FlutterSecureStorage();

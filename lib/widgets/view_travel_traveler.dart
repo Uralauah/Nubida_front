@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/services/service.dart';
 
 class ViewTravelTraveler extends StatefulWidget {
@@ -201,7 +202,7 @@ class _ViewTravelTravelerState extends State<ViewTravelTraveler> {
   }
 
   Future<void> sendData(int travelId, int travelTravelerId) async {
-    var uri = Uri.parse('http://localhost:8080/travel/deleteTraveler');
+    var uri = Uri.parse('$serverUrl/travel/deleteTraveler');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',

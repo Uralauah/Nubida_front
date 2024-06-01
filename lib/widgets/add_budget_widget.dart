@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/widgets/custom_text_field.dart';
 import 'package:nubida_front/services/service.dart';
 
@@ -27,7 +28,7 @@ class _AddBudgetState extends State<AddBudget> {
   }
 
   Future<void> sendData() async {
-    var uri = Uri.parse('http://localhost:8080/travel/budget?id=${widget.id}');
+    var uri = Uri.parse('$serverUrl/travel/budget?id=${widget.id}');
 
     final token = await Service().getCurrentUserToken();
 

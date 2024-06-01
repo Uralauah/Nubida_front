@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nubida_front/main.dart';
 
 import 'package:nubida_front/models/plan_model.dart';
 import 'package:nubida_front/widgets/add_plan.dart';
@@ -1143,7 +1144,7 @@ class _TravelDetailState extends State<TravelDetail> {
   }
 
   Future<void> travelQuit(int travelId) async {
-    var uri = Uri.parse('http://localhost:8080/travel/quit?id=$travelId');
+    var uri = Uri.parse('$serverUrl/travel/quit?id=$travelId');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',
@@ -1200,7 +1201,7 @@ class _TravelDetailState extends State<TravelDetail> {
   }
 
   Future<void> sendData(int travelId) async {
-    var uri = Uri.parse('http://localhost:8080/travel/delete?id=$travelId');
+    var uri = Uri.parse('$serverUrl/travel/delete?id=$travelId');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',
@@ -1257,7 +1258,7 @@ class _TravelDetailState extends State<TravelDetail> {
   }
 
   Future<void> deletePlan(int planId) async {
-    var uri = Uri.parse('http://localhost:8080/plan/delete?plan_id=$planId');
+    var uri = Uri.parse('$serverUrl/plan/delete?plan_id=$planId');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',

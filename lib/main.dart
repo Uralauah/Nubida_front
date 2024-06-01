@@ -14,9 +14,17 @@ import 'package:nubida_front/screens/register_screen.dart';
 import 'package:nubida_front/widgets/bottom_bar.dart';
 import 'package:nubida_front/screens/travel_create.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'dart:io' show Platform;
 
-void main() async {
+String serverUrl = '';
+
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  serverUrl = Platform.isAndroid
+      ? dotenv.env['AND_SERVER_URL']!
+      : dotenv.env['IOS_SERVER_URL']!;
   runApp(const Nubida());
 }
 

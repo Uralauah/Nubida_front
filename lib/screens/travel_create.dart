@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/services/service.dart';
 
 import 'package:nubida_front/widgets/custom_text_field.dart';
@@ -43,7 +44,7 @@ class _TravelCreateState extends State<TravelCreate> {
   }
 
   Future<void> sendData() async {
-    var uri = Uri.parse('http://localhost:8080/travel/create');
+    var uri = Uri.parse('$serverUrl/travel/create');
     final token = Service().getCurrentUserToken();
 
     var body = jsonEncode({

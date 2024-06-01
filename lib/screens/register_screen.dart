@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/widgets/custom_text_field.dart';
 import 'package:nubida_front/widgets/validate_email.dart';
 import 'package:nubida_front/widgets/validate_password.dart';
@@ -36,7 +37,7 @@ class _LoginFormState extends State<RegisterForm> {
   }
 
   Future<void> sendData() async {
-    var uri = Uri.parse('http://localhost:8080/traveler/register');
+    var uri = Uri.parse('$serverUrl/traveler/register');
     var headers = {
       'Content-Type': 'application/json',
     };

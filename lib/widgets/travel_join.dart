@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/widgets/custom_text_field.dart';
 import 'package:nubida_front/services/service.dart';
 
@@ -17,7 +18,7 @@ class _TravelJoinState extends State<TravelJoin> {
   final TextEditingController code = TextEditingController();
 
   Future<void> sendData() async {
-    var uri = Uri.parse('http://localhost:8080/travel/join');
+    var uri = Uri.parse('$serverUrl/travel/join');
     final token = await Service().getCurrentUserToken();
 
     var body = jsonEncode({

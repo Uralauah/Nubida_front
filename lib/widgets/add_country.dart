@@ -1,9 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:nubida_front/class/time_picker_spinner_pop_up.dart';
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/widgets/custom_text_field.dart';
 import 'package:nubida_front/services/service.dart';
 
@@ -27,7 +26,7 @@ class _AddCountryState extends State<AddCountry> {
   }
 
   Future<void> sendData() async {
-    var uri = Uri.parse('http://localhost:8080/country/admin/create');
+    var uri = Uri.parse('$serverUrl/country/admin/create');
     final token = await Service().getCurrentUserToken();
     var body = jsonEncode({
       'name': countryName.text,

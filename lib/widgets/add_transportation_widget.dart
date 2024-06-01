@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:nubida_front/class/time_picker_spinner_pop_up.dart';
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/widgets/custom_text_field.dart';
 import 'package:nubida_front/services/service.dart';
 
@@ -40,8 +41,8 @@ class _AddTransportState extends State<AddTransport> {
   }
 
   Future<void> sendData() async {
-    var uri = Uri.parse(
-        'http://localhost:8080/travel/addTransport?id=${widget.travel_id}');
+    var uri =
+        Uri.parse('$serverUrl/travel/addTransport?id=${widget.travel_id}');
     final token = await Service().getCurrentUserToken();
     planStartDate = DateTime(planStartDate.year, planStartDate.month,
         planStartDate.day, planStartTime.hour, planStartTime.minute);

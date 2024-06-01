@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/widgets/custom_text_field.dart';
 import 'package:nubida_front/widgets/validate_email.dart';
 import 'package:nubida_front/widgets/validate_password.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:jwt_decode/jwt_decode.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'dart:io' show Platform;
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -23,7 +26,7 @@ class _LoginFormState extends State<LoginForm> {
   final TextEditingController password = TextEditingController();
 
   Future<void> sendData() async {
-    var uri = Uri.parse('http://localhost:8080/login');
+    var uri = Uri.parse('$serverUrl/login');
     var request = http.MultipartRequest('POST', uri)
       ..fields['username'] = email.text
       ..fields['password'] = password.text;

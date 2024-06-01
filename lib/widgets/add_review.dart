@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:http/http.dart' as http;
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/services/service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -37,8 +38,7 @@ class _AddReviewState extends State<AddReview> {
   }
 
   Future<void> sendData() async {
-    var uri =
-        Uri.parse('http://localhost:8080/country/addReview?id=${widget.id}');
+    var uri = Uri.parse('$serverUrl/country/addReview?id=${widget.id}');
     final token = await Service().getCurrentUserToken();
 
     var body = jsonEncode({
@@ -96,7 +96,7 @@ class _AddReviewState extends State<AddReview> {
   }
 
   Future<void> sendChange() async {
-    var uri = Uri.parse('http://localhost:8080/review/change');
+    var uri = Uri.parse('$serverUrl/review/change');
     final token = await Service().getCurrentUserToken();
 
     var body = jsonEncode({

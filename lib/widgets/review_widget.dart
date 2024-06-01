@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/services/service.dart';
 import 'package:nubida_front/widgets/add_review.dart';
 import 'package:http/http.dart' as http;
@@ -272,7 +273,7 @@ class _ReviewState extends State<Review> {
   }
 
   Future<void> sendData(int reviewId) async {
-    var uri = Uri.parse('http://localhost:8080/review/delete');
+    var uri = Uri.parse('$serverUrl/review/delete');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',

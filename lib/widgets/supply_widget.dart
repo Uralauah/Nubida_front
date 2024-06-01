@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:nubida_front/main.dart';
 import 'package:nubida_front/services/service.dart';
 import 'package:http/http.dart' as http;
 
@@ -188,8 +189,7 @@ class _SupplyState extends State<Supply> {
   }
 
   Future<void> sendData(int travelId, bool check, String supplyName) async {
-    var uri =
-        Uri.parse('http://localhost:8080/travel/supply/check?id=$travelId');
+    var uri = Uri.parse('$serverUrl/travel/supply/check?id=$travelId');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',
@@ -243,8 +243,7 @@ class _SupplyState extends State<Supply> {
   }
 
   Future<void> deleteSupply(int travelId, String supplyName) async {
-    var uri =
-        Uri.parse('http://localhost:8080/travel/supply/delete?id=$travelId');
+    var uri = Uri.parse('$serverUrl/travel/supply/delete?id=$travelId');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',
@@ -305,8 +304,7 @@ class _SupplyState extends State<Supply> {
 
   Future<void> sendCountData(
       int travelId, int countChange, String supplyName) async {
-    var uri =
-        Uri.parse('http://localhost:8080/travel/supply/count?id=$travelId');
+    var uri = Uri.parse('$serverUrl/travel/supply/count?id=$travelId');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',
