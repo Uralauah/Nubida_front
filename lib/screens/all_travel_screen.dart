@@ -12,7 +12,7 @@ class AllTravel extends StatefulWidget {
 }
 
 class _AllTravelState extends State<AllTravel> {
-  Future<List<TravelModel>> travels = Service().getAllTravel();
+  Future<List<TravelModel>> travels = Service().getMyTravel();
 
   @override
   Widget build(BuildContext context) {

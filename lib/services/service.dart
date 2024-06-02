@@ -35,12 +35,12 @@ class Service {
     }
   }
 
-  Future<List<TravelModel>> getAllTravel() async {
+  Future<List<TravelModel>> getMyTravel() async {
     List<TravelModel> travelInstances = [];
 
     Uri url;
 
-    url = Uri.parse('$baseUrl/travel/allTravel');
+    url = Uri.parse('$baseUrl/travel/getMyTravel');
 
     // print(url);
     final token = await getCurrentUserToken();
@@ -61,7 +61,7 @@ class Service {
     List<TravelModel> travelInstances = [];
     DateTime now = DateTime.now();
 
-    List<TravelModel> travels = await getAllTravel();
+    List<TravelModel> travels = await getMyTravel();
     for (var travel in travels) {
       if (DateTime.parse(travel.returndate).isBefore(now)) {
         continue;
@@ -133,11 +133,11 @@ class Service {
     throw Error();
   }
 
-  Future<List<TravelModel>> getAdminTravel() async {
+  Future<List<TravelModel>> getAllTravel() async {
     List<TravelModel> travelInstances = [];
 
     Uri url;
-    url = Uri.parse('$baseUrl/travel/adminTravel');
+    url = Uri.parse('$baseUrl/travel/getAllTravel');
     // print(url);
     final token = await getCurrentUserToken();
     final response = await http.get(url, headers: {'Authorization': token});

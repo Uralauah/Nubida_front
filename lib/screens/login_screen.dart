@@ -6,8 +6,6 @@ import 'package:nubida_front/widgets/validate_password.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:jwt_decode/jwt_decode.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'dart:io' show Platform;
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);

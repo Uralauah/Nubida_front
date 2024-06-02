@@ -13,7 +13,7 @@ class AdminViewTravel extends StatefulWidget {
 }
 
 class _AdminViewTravelState extends State<AdminViewTravel> {
-  Future<List<TravelModel>> travels = Service().getAdminTravel();
+  Future<List<TravelModel>> travels = Service().getAllTravel();
 
   @override
   Widget build(BuildContext context) {
