@@ -215,7 +215,7 @@ class Service {
     List<SupplyModel> supplyInstances = [];
 
     Uri url;
-    url = Uri.parse('$baseUrl/travel/supply/getAll?id=$id');
+    url = Uri.parse('$baseUrl/supply/getAll?id=$id');
     final token = await getCurrentUserToken();
     final response = await http.get(url, headers: {'Authorization': token});
     if (response.statusCode == 200) {
@@ -235,7 +235,7 @@ class Service {
     List<CountryModel> countryInstances = [];
 
     Uri url;
-    url = Uri.parse('$baseUrl/country/allCountry');
+    url = Uri.parse('$baseUrl/country/getAllCountry');
     final token = await getCurrentUserToken();
     final response = await http.get(url, headers: {'Authorization': token});
     if (response.statusCode == 200) {
@@ -296,7 +296,7 @@ class Service {
 
   Future<Map<String, dynamic>> getTravelInfo(int id) async {
     Uri url;
-    url = Uri.parse('${Service.baseUrl}/travel/allInfo?id=$id');
+    url = Uri.parse('${Service.baseUrl}/travel/getTravelInfo?id=$id');
     final token = await getCurrentUserToken();
 
     final response = await http.get(url, headers: {'Authorization': token});
@@ -314,7 +314,7 @@ class Service {
 
   Future<List<Map<String, dynamic>>> getTravelTravelerInfo(int id) async {
     Uri url;
-    url = Uri.parse('${Service.baseUrl}/travel/traveler?id=$id');
+    url = Uri.parse('${Service.baseUrl}/travel/getTravelTraveler?id=$id');
     final token = await getCurrentUserToken();
 
     final response = await http.get(url, headers: {'Authorization': token});

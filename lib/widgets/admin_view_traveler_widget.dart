@@ -176,7 +176,7 @@ class _AdminTravelerState extends State<AdminTraveler> {
   }
 
   Future<void> sendData() async {
-    var uri = Uri.parse('$serverUrl/traveler/delete');
+    var uri = Uri.parse('$serverUrl/traveler/deleteTraveler');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',

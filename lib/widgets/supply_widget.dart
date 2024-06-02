@@ -177,7 +177,7 @@ class _SupplyState extends State<Supply> {
                 onChanged: (value) {
                   setState(() {
                     checked = !checked;
-                    sendData(widget.id, checked, widget.name);
+                    sendData(checked, widget.name);
                   });
                 },
               ),
@@ -188,8 +188,8 @@ class _SupplyState extends State<Supply> {
     );
   }
 
-  Future<void> sendData(int travelId, bool check, String supplyName) async {
-    var uri = Uri.parse('$serverUrl/travel/supply/check?id=$travelId');
+  Future<void> sendData(bool check, String supplyName) async {
+    var uri = Uri.parse('$serverUrl/supply/check');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',
@@ -243,7 +243,7 @@ class _SupplyState extends State<Supply> {
   }
 
   Future<void> deleteSupply(int travelId, String supplyName) async {
-    var uri = Uri.parse('$serverUrl/travel/supply/delete?id=$travelId');
+    var uri = Uri.parse('$serverUrl/supply/delete?id=$travelId');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',
@@ -304,7 +304,7 @@ class _SupplyState extends State<Supply> {
 
   Future<void> sendCountData(
       int travelId, int countChange, String supplyName) async {
-    var uri = Uri.parse('$serverUrl/travel/supply/count?id=$travelId');
+    var uri = Uri.parse('$serverUrl/supply/count');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',

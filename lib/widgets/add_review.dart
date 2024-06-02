@@ -96,7 +96,7 @@ class _AddReviewState extends State<AddReview> {
   }
 
   Future<void> sendChange() async {
-    var uri = Uri.parse('$serverUrl/review/change');
+    var uri = Uri.parse('$serverUrl/review/modify');
     final token = await Service().getCurrentUserToken();
 
     var body = jsonEncode({

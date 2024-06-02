@@ -203,7 +203,7 @@ class _TravelDetailState extends State<TravelDetail> {
                                           children: [
                                             TextButton(
                                               onPressed: () {
-                                                travelQuit(widget.id);
+                                                quitTravel(widget.id);
                                               },
                                               style: ButtonStyle(
                                                 backgroundColor:
@@ -1143,8 +1143,8 @@ class _TravelDetailState extends State<TravelDetail> {
     );
   }
 
-  Future<void> travelQuit(int travelId) async {
-    var uri = Uri.parse('$serverUrl/travel/quit?id=$travelId');
+  Future<void> quitTravel(int travelId) async {
+    var uri = Uri.parse('$serverUrl/travel/quitTravel?id=$travelId');
     var token = Service().getCurrentUserToken();
     var headers = {
       'Content-Type': 'application/json',
