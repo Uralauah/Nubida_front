@@ -13,6 +13,6 @@ class TravelModel {
         startdate = json['start_date'],
         returndate = json['return_date'],
         moneyTerm = json['destination']['money_term'],
-        review = json['review'],
+        review = json['isReview'],
         leader = json['leader'];
 }

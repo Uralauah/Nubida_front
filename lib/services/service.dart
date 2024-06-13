@@ -52,6 +52,7 @@ class Service {
         travelInstances.add(TravelModel.fromJson(travel));
       }
       travelInstances.sort((a, b) => a.startdate.compareTo(b.startdate));
+      // print(travelInstances);
       return travelInstances;
     }
     throw Error();
@@ -62,6 +63,7 @@ class Service {
     DateTime now = DateTime.now();
 
     List<TravelModel> travels = await getMyTravel();
+    print(travels);
     for (var travel in travels) {
       if (DateTime.parse(travel.returndate).isBefore(now)) {
         continue;

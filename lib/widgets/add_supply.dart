@@ -29,8 +29,7 @@ class _AddSupplyState extends State<AddSupply> {
   }
 
   Future<void> sendData() async {
-    var uri =
-        Uri.parse('$serverUrl/travel/supply/create?id=${widget.travel_id}');
+    var uri = Uri.parse('$serverUrl/supply/create?id=${widget.travel_id}');
     final token = await Service().getCurrentUserToken();
 
     var body = jsonEncode({

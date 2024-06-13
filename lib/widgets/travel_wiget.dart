@@ -128,11 +128,16 @@ class _TravelState extends State<Travel> {
                         children: [
                           const Icon(Icons.flight_takeoff_outlined, size: 45),
                           const SizedBox(width: 18),
-                          Text(
-                            countryName,
-                            style: const TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
+                          SizedBox(
+                            width: screenWidth * 0.23,
+                            child: AutoSizeText(
+                              countryName,
+                              style: const TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                              minFontSize: 20,
                             ),
                           ),
                         ],

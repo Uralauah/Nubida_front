@@ -29,6 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
     await storage.write(key: 'page', value: '0');
   }
 
+  Future<void> logout(BuildContext context) async {
+    FlutterSecureStorage storage = const FlutterSecureStorage();
+    await storage.delete(key: 'jwt_token');
+    await storage.delete(key: 'page');
+    Navigator.of(context).pushReplacementNamed('/login');
+  }
+
   Future<TravelModel?> travel = Service().getNextTravel();
   Future<List<RecommendCountryModel>> countries =
       Service().getRecommendCountry();
